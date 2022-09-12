@@ -3,7 +3,7 @@ public class HourlyRate {
     public int price;
     public String time;
 
-    hourlyRate(int price, String time) {
+    HourlyRate(int price, String time) {
         this.price = price;
         this.time = time;
     }

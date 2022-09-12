@@ -58,9 +58,14 @@ public class Labb1StefanKarlssonV2 {
 
                         } else if (choiceMenuTwo == 2) {
                             MinAndMax(priceInput);
-
                             int minPrice = priceInput[0];
                             System.out.println("Lowest price: " + minPrice + " öre.");
+                        } else if (choiceMenuTwo == 3) {
+                            MinAndMax(priceInput);
+                            int maxPrice = priceInput[23];
+                            System.out.println("Highest price: " + maxPrice + " öre.");
+                        } else {
+
                         }
 
 
@@ -71,6 +76,24 @@ public class Labb1StefanKarlssonV2 {
         }
 
 
+    }
+
+    private static void StartMenu() {
+        System.out.println("Electric prices");
+        System.out.println("========");
+        System.out.println("1. Input");
+        System.out.println("2. Min, Max & Average");
+        System.out.println("3. Sort");
+        System.out.println("4. Best charging time (4h)");
+        System.out.println("e. End");
+    }
+    private static void MenuTwo() {
+        System.out.println("Min, Max & Average");
+        System.out.println("==================");
+        System.out.println("1. Average:");
+        System.out.println("2. Lowest:");
+        System.out.println("3. Highest:");
+        System.out.println("4. Return:");
     }
 
     //metod för att få medelvärde
@@ -85,33 +108,13 @@ public class Labb1StefanKarlssonV2 {
     //metod för att hålla ihop tid & pris
     private static void TimePriceInput(String[] timeArray, int[] price, HourlyRate[] priceTime) {
         for (int i = 0; i < price.length; i++) {
-            priceTime[i] = new HourlyRate();
-            priceTime[i].time = timeArray[i];
-            priceTime[i].setPrice(price[i]);
+            priceTime[i] = new HourlyRate(price[i], timeArray[i]);
+//            priceTime[i].time = timeArray[i];
+//            priceTime[i].setPrice(price[i]);
 
         }
     }
 
-    //metod för meny2 (Min, Max, Med)
-    private static void MenuTwo() {
-        System.out.println("Min, Max & Average");
-        System.out.println("==================");
-        System.out.println("1. Average:");
-        System.out.println("2. Lowest:");
-        System.out.println("3. Highest:");
-        System.out.println("4. Return:");
-    }
-
-    //metod för startmeny
-    private static void StartMenu() {
-        System.out.println("Electric prices");
-        System.out.println("========");
-        System.out.println("1. Input");
-        System.out.println("2. Min, Max & Average");
-        System.out.println("3. Sort");
-        System.out.println("4. Best charging time (4h)");
-        System.out.println("e. End");
-    }
 
     //bubble sort för tiden
     public static void TimeSort(HourlyRate hourlyRate[]) {
