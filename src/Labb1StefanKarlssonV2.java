@@ -14,11 +14,8 @@ public class Labb1StefanKarlssonV2 {
         int[] priceInput = new int[24];
 
         HourlyRate hourlyRate[] = new HourlyRate[priceInput.length];
-        Object[] tidOchPris = {timeArray, priceInput};
-
 
         boolean checkProgram = true;
-
         while (checkProgram) {
             boolean checkProgramTwo = true;
 //metod för startmeny
@@ -59,23 +56,20 @@ public class Labb1StefanKarlssonV2 {
                         } else if (choiceMenuTwo == 2) {
                             MinAndMax(priceInput);
                             int minPrice = priceInput[0];
-                            System.out.println("Lowest price: " + minPrice + " öre.");
+                            String timeSpan = timeArray[0];
+                            System.out.println("Lowest price: " + minPrice + " öre between: " + timeSpan);
                         } else if (choiceMenuTwo == 3) {
                             MinAndMax(priceInput);
                             int maxPrice = priceInput[23];
-                            System.out.println("Highest price: " + maxPrice + " öre.");
+                            String timeSpan = timeArray[23];
+                            System.out.println("Highest price: " + maxPrice + " öre between: " + timeSpan);
                         } else {
 
                         }
-
-
                     }
                 }
-
             }
         }
-
-
     }
 
     private static void StartMenu() {
@@ -87,6 +81,7 @@ public class Labb1StefanKarlssonV2 {
         System.out.println("4. Best charging time (4h)");
         System.out.println("e. End");
     }
+
     private static void MenuTwo() {
         System.out.println("Min, Max & Average");
         System.out.println("==================");
@@ -101,22 +96,16 @@ public class Labb1StefanKarlssonV2 {
         for (int i = 0; i < priceTime.length; i++) {
             sumTwo += priceTime[i].getPrice();
         }
-        double average = sumTwo / priceTime.length;
-        return average;
+        return sumTwo / priceTime.length;
     }
 
     //metod för att hålla ihop tid & pris
     private static void TimePriceInput(String[] timeArray, int[] price, HourlyRate[] priceTime) {
         for (int i = 0; i < price.length; i++) {
             priceTime[i] = new HourlyRate(price[i], timeArray[i]);
-//            priceTime[i].time = timeArray[i];
-//            priceTime[i].setPrice(price[i]);
-
         }
     }
 
-
-    //bubble sort för tiden
     public static void TimeSort(HourlyRate hourlyRate[]) {
         HourlyRate[] hourlyRateTwo = hourlyRate.clone();
 
@@ -137,7 +126,7 @@ public class Labb1StefanKarlssonV2 {
     }
 
     //bubble sort för min & max pris
-    public static int[] MinAndMax(int[] price) {
+    public static void MinAndMax(int[] price) {
         boolean sortingBubble = true;
 
         while (sortingBubble) {
@@ -151,6 +140,5 @@ public class Labb1StefanKarlssonV2 {
                 }
             }
         }
-        return price;
     }
 }
