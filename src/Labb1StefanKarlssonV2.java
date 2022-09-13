@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -39,35 +40,15 @@ public class Labb1StefanKarlssonV2 {
 
 //else if statement för inmatning 2:
                 } else if (choice == 2) {
+                    double sum = 0;
+                    double average = GetAverage(hourlyRate, sum);
+                    System.out.println("Average: " + average + " öre.");
+                    System.out.println("");
+                    MinAndMax(hourlyRate);
+                } else if (choice == 3) {
 
-                    while (checkProgramTwo) {
-                        checkProgramTwo = true;
-//metod för att få fram meny under input 2:
-                        MenuTwo();
-
-                        int choiceMenuTwo = s.nextInt();
-                        double sum = 0;
-
-                        if (choiceMenuTwo == 1) {
-                            double average = GetAverage(hourlyRate, sum);
-                            System.out.println("Average price: " + average + " öre.");
-                            System.out.println("");
-
-                        } else if (choiceMenuTwo == 2) {
-                            MinAndMax(priceInput);
-                            int minPrice = priceInput[0];
-                            String timeSpan = timeArray[0];
-                            System.out.println("Lowest price: " + minPrice + " öre between: " + timeSpan);
-                        } else if (choiceMenuTwo == 3) {
-                            MinAndMax(priceInput);
-                            int maxPrice = priceInput[23];
-                            String timeSpan = timeArray[23];
-                            System.out.println("Highest price: " + maxPrice + " öre between: " + timeSpan);
-                        } else {
-
-                        }
-                    }
                 }
+
             }
         }
     }
@@ -82,14 +63,7 @@ public class Labb1StefanKarlssonV2 {
         System.out.println("e. End");
     }
 
-    private static void MenuTwo() {
-        System.out.println("Min, Max & Average");
-        System.out.println("==================");
-        System.out.println("1. Average:");
-        System.out.println("2. Lowest:");
-        System.out.println("3. Highest:");
-        System.out.println("4. Return:");
-    }
+
 
     //metod för att få medelvärde
     private static double GetAverage(HourlyRate[] priceTime, double sumTwo) {
@@ -102,7 +76,9 @@ public class Labb1StefanKarlssonV2 {
     //metod för att hålla ihop tid & pris
     private static void TimePriceInput(String[] timeArray, int[] price, HourlyRate[] priceTime) {
         for (int i = 0; i < price.length; i++) {
-            priceTime[i] = new HourlyRate(price[i], timeArray[i]);
+            priceTime[i] = new HourlyRate();
+            priceTime[i].time = timeArray[i];
+            priceTime[i].SetPrice(price[i]);
         }
     }
 
@@ -125,20 +101,48 @@ public class Labb1StefanKarlssonV2 {
         }
     }
 
-    //bubble sort för min & max pris
-    public static void MinAndMax(int[] price) {
-        boolean sortingBubble = true;
+    //sort för min & max pris
+    public static void MinAndMax(HourlyRate[] hourlyRate) {
+        boolean sort = true;
 
-        while (sortingBubble) {
-            sortingBubble = false;
-            for (int i = 0; i < price.length - 1; i++) {
-                if (price[i] > price[i + 1]) {
-                    int temp = price[i + 1];
-                    price[i + 1] = price[i];
-                    price[i] = temp;
-                    sortingBubble = true;
+        while (sort) {
+            sort = false;
+            for (int i = 0; i < hourlyRate.length - 1; i++) {
+                if (hourlyRate[i].getPrice() > hourlyRate[i + 1].getPrice()) {
+                    HourlyRate temp = hourlyRate[i + 1];
+                    hourlyRate[i + 1] = hourlyRate[i];
+                    hourlyRate[i] = temp;
+                    sort = true;
                 }
             }
         }
+        for (int i = 0; i <1 ; i++) {
+            System.out.println("(Lowest) Between: " + hourlyRate[0].time + " the price is " + hourlyRate[0].price +  " öre.");
+            System.out.println("");
+            System.out.println("(Highest) Between: " + hourlyRate[hourlyRate.length-1].time + " the price is " + hourlyRate[hourlyRate.length-1].price +  " öre.");
+            System.out.println("");
+
+
+        }
     }
+    public static void ArraySorter(HourlyRate[] hourlyRate) {
+
+        HourlyRate[] hourlyRateCopy = Arrays.copyOf(hourlyRate, hourlyRate.length)
+        boolean sort = true;
+
+        while (sort) {
+            sort = false;
+            for (int i = 0; i < hourlyRate.length - 1; i++) {
+                if (hourlyRateCopy[i].getPrice() > hourlyRateCopy[i + 1].getPrice()) {
+                    HourlyRate temp = hourlyRateCopy[i + 1];
+                    hourlyRateCopy[i + 1] = hourlyRateCopy[i];
+                    hourlyRateCopy[i] = temp;
+                    sort = true;
+                }
+            }
+            for (int i = 0; i < hourlyRateCopy.length; i++) {
+                System.out.println("Between hours: " + hourlyRateCopy[i].time + "the cost is: " + hourlyRateCopy[i].price + " öre.");
+            }
+        }
+
 }

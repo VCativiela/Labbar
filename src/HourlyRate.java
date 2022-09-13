@@ -3,16 +3,15 @@ public class HourlyRate {
     public int price;
     public String time;
 
-    HourlyRate(int price, String time) {
-        this.price = price;
-        this.time = time;
+    HourlyRate() {
+
     }
 
     public int getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void SetPrice(int price) {
         this.price = price;
 
     }
