@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="278b513b-161d-45b3-b095-6eadb4959c23" name="Changes" comment="update 13/09">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HourlyRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HourlyRate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Labb1StefanKarlssonV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb1StefanKarlssonV2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/phtef/OneDrive/Documents/Skolarbete_java/skoljavaHTtwentytwo/src/Labb1StefanKarlssonV1.java"
+    "last_opened_file_path": "/Users/vicente/Dev/Labbar"
   }
 }]]></component>
   <component name="RunManager">
