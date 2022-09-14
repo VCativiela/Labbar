@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="278b513b-161d-45b3-b095-6eadb4959c23" name="Changes" comment="update 13/09">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HourlyRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HourlyRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labbar/Labb1StefanKarlssonV2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labbar/Labb1StefanKarlssonV2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Labb1StefanKarlssonV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb1StefanKarlssonV2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,14 +32,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/vicente/Dev/Labbar"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/vicente/Dev/Labbar&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Labb1StefanKarlssonV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labb1StefanKarlssonV2" />

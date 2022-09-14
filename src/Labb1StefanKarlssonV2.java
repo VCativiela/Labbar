@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Labb1StefanKarlssonV2 {
 
     static Scanner scanner = new Scanner(System.in);
+
     static String[] timeArray = {"00 - 01", "01 - 02", "02 - 03", "03 - 04", "04 - 05", "05 - 06", "06 - 07", "07 - 08",
             "08 - 09", "09 - 10", "10 - 11", "11 - 12", "12 - 13", "13 - 14", "14 - 15",
             "15 - 16", "16 - 17", "17 - 18", "18 - 19", "19 - 20", "20 - 21", "21 - 22", "22 - 23", "23 - 00"};
@@ -26,9 +27,9 @@ public class Labb1StefanKarlssonV2 {
                     }
                 } else if (choice == 2) {
                     HourlyRate[] sortedHourlyRate = sortHourlyRateByPrice(hourlyRate);
-                    System.out.println("(Lowest) Between: " + hourlyRate[0].getTime() + " the price is " + hourlyRate[0].getPrice() + " öre.");
+                    System.out.println("(Lowest) Between: " + sortedHourlyRate[0].getTime() + " the price is " + sortedHourlyRate[0].getPrice() + " öre.");
                     System.out.println("");
-                    System.out.println("(Highest) Between: " + hourlyRate[hourlyRate.length - 1].getTime() + " the price is " + hourlyRate[hourlyRate.length - 1].getPrice() + " öre.");
+                    System.out.println("(Highest) Between: " + sortedHourlyRate[hourlyRate.length - 1].getTime() + " the price is " + sortedHourlyRate[sortedHourlyRate.length - 1].getPrice() + " öre.");
                     System.out.println("");
                     double average = getAverage(hourlyRate);
                     System.out.println("Average: " + average + " öre.");
@@ -40,7 +41,7 @@ public class Labb1StefanKarlssonV2 {
                     }
                 } else if (choice == 4) {
                     HourlyRate[] bestChargingRange = calculateBestChargingRange(hourlyRate);
-                    System.out.println("Cheapest range:");
+                    System.out.println("Best range:");
                     for (int i = 0; i < bestChargingRange.length; i++) {
                         System.out.println("Between hours: " + bestChargingRange[i].getTime() + " the cost is: " + bestChargingRange[i].getPrice() + " öre.");
                     }
@@ -77,6 +78,7 @@ public class Labb1StefanKarlssonV2 {
     private static HourlyRate[] sortHourlyRateByPrice(HourlyRate[] hourlyRate) {
         boolean sort = true;
         HourlyRate[] sortedHourlyRate = Arrays.copyOf(hourlyRate, hourlyRate.length);
+
         while (sort) {
             sort = false;
             for (int i = 0; i < sortedHourlyRate.length - 1; i++) {
@@ -88,6 +90,7 @@ public class Labb1StefanKarlssonV2 {
                 }
             }
         }
+
         return sortedHourlyRate;
     }
 
